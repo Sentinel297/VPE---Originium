@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+	
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_OriginiumSpikeSTNL</defName>
+	<label>Originium Spike</label>
+	<description>Attack the target by causing a temporary rapid Originium growth beneath the target's feet, causing them to get impaled by a sharp spike made from Originium.</description>
+	<iconPath>UI_OriginiumSTNL/Abilities/Originium/SpikeAttack</iconPath>
+	<castTime>120</castTime>
+	<targetMode>Pawn</targetMode>
+	<chance>1</chance>
+	<range>20.9</range>
+	<needsTicking>true</needsTicking>
+	<goodwillImpact>0</goodwillImpact>
+	<abilityClass>VPE_Originium.Ability_OriginiumSpike</abilityClass>
+	<castSound>PsycastPsychicPulse</castSound>
+	<!-- <fleckOnTarget>PsychicRitual_Complete</fleckOnTarget> -->
+	<targetingParameters>
+		<canTargetLocations>False</canTargetLocations>
+		<canTargetSelf>True</canTargetSelf>
+		<canTargetAnimals>True</canTargetAnimals>
+		<canTargetPawns>True</canTargetPawns>
+		<canTargetHumans>True</canTargetHumans>
+		<canTargetMechs>True</canTargetMechs>
+	</targetingParameters>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_OriginiumSTNL</path>
+			<level>1</level>
+			<order>1</order>
+			<psyfocusCost>0.04</psyfocusCost>
+			<entropyGain>10</entropyGain>
+		</li>
+		<li Class="VEF.Abilities.AbilityExtension_EffecterOnTarget">
+	<effecterDef>RaisedRock_Collapse</effecterDef>
+	<maintainForTicks>1</maintainForTicks>
+	<scale>1</scale>
+</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+  
+  <!-- Level 2 -->
+  
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_ArtsWardSTNL</defName>
+	<label>Arts: Ward</label>
+	<description>Place a protective barrier around the target that will intercept projectiles and send them back to the attacker. \nThe amount of deflections the shield can provide scales with psychic sensitivity. (Default: 10% per deflection)</description>
+	<iconPath>UI_OriginiumSTNL/Abilities/Originium/Ward</iconPath>
+	<castTime>120</castTime>
+	<durationTime>30000</durationTime>
+	<targetMode>Pawn</targetMode>
+	<chance>0</chance>
+	<range>10.5</range>
+	<needsTicking>true</needsTicking>
+	<goodwillImpact>0</goodwillImpact>
+	<abilityClass>VPE_Originium.Ability_ArtsWard</abilityClass>
+	<castSound>PsycastPsychicEffect</castSound>
+	<!-- <fleckOnTarget>PsychicRitual_Complete</fleckOnTarget> -->
+	<targetingParameters>
+		<canTargetLocations>False</canTargetLocations>
+		<canTargetSelf>True</canTargetSelf>
+		<canTargetAnimals>True</canTargetAnimals>
+		<canTargetPawns>True</canTargetPawns>
+		<canTargetHumans>True</canTargetHumans>
+		<canTargetMechs>True</canTargetMechs>
+	</targetingParameters>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_OriginiumSTNL</path>
+			<level>2</level>
+			<order>1</order>
+			<psyfocusCost>0.15</psyfocusCost>
+			<entropyGain>10</entropyGain>
+			<prerequisites>
+				<li>VPE_OriginiumSpikeSTNL</li>
+			</prerequisites>
+
+		</li>
+		<li Class="VEF.Abilities.AbilityExtension_EffecterOnTarget">
+	<effecterDef>Skip_ExitNoDelay</effecterDef>
+	<maintainForTicks>1</maintainForTicks>
+	<scale>1</scale>
+</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+  
+
+  
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_ArtsRestorationSTNL</defName>
+	<label>Arts: Restoration</label>
+	<description>Grant minor restoration to the target creature, healing non permanent wounds over time while prioritizing bleeding injuries. The effectiveness depends on the caster's medical skill.\nThis psycast will grant XP to the caster's medical skill. (Default: 500 XP)</description>
+	<iconPath>UI_OriginiumSTNL/Abilities/Originium/Restoration</iconPath>
+	<castTime>120</castTime>
+	<durationTime>30000</durationTime>
+	<targetMode>Pawn</targetMode>
+	<chance>0</chance>
+	<range>14.9</range>
+	<needsTicking>true</needsTicking>
+	<goodwillImpact>0</goodwillImpact>
+	<abilityClass>VPE_Originium.Ability_ArtsRestoration</abilityClass>
+	<castSound>Psycast_WordOf_Effect</castSound>
+	<fleckOnTarget>PsycastAreaEffect</fleckOnTarget>
+	<targetingParameters>
+		<canTargetLocations>False</canTargetLocations>
+		<canTargetSelf>True</canTargetSelf>
+		<canTargetAnimals>True</canTargetAnimals>
+		<canTargetPawns>True</canTargetPawns>
+		<canTargetHumans>True</canTargetHumans>
+		<canTargetMechs>False</canTargetMechs>
+	</targetingParameters>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_OriginiumSTNL</path>
+			<level>2</level>
+			<order>3</order>
+			<psyfocusCost>0.18</psyfocusCost>
+			<entropyGain>20</entropyGain>
+			<prerequisites>
+				<li>VPE_OriginiumSpikeSTNL</li>
+			</prerequisites>
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+  
+  <!-- Level 3 -->
+  
+  
+  
+  <VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_ArtsSurgeSTNL</defName>
+	<label>Arts: Surge</label>
+	<description>Enhance the target's attack speed and allow their attacks to inflict enemies with Originium buildup, causing an Originium spike to erupt from the target should the buildup hit 100%.</description>
+	<iconPath>UI_OriginiumSTNL/Abilities/Originium/Surge</iconPath>
+	<castTime>120</castTime>
+	<durationTime>30000</durationTime>
+	<targetMode>Pawn</targetMode>
+	<chance>0</chance>
+	<range>14.9</range>
+	<needsTicking>true</needsTicking>
+	<goodwillImpact>0</goodwillImpact>
+	<abilityClass>VPE_Originium.Ability_ArtsSurge</abilityClass>
+	<castSound>VPE_PsychicDrone_Cast</castSound>
+	<fleckOnTarget>PsycastAreaEffect</fleckOnTarget>
+	<targetingParameters>
+		<canTargetLocations>True</canTargetLocations>
+		<canTargetSelf>True</canTargetSelf>
+		<canTargetAnimals>True</canTargetAnimals>
+		<canTargetPawns>True</canTargetPawns>
+		<canTargetHumans>True</canTargetHumans>
+		<canTargetMechs>True</canTargetMechs>
+	</targetingParameters>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_OriginiumSTNL</path>
+			<level>3</level>
+			<order>1</order>
+			<psyfocusCost>0.25</psyfocusCost>
+			<entropyGain>30</entropyGain>
+<prerequisites>
+	<li>VPE_ArtsRestorationSTNL</li>
+	<li>VPE_ArtsWardSTNL</li>
+</prerequisites>
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+  
+  <!-- Level 4 -->
+  
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_OriginiumConstructTurretSTNL</defName>
+	<label>Originium Construct: Turret</label>
+	<description>Form a construct made out of Originium that will attack nearby enemies by shooting at them with Originium Shards.\n\n(Turret Duration:5 hours)</description>
+	<iconPath>UI_OriginiumSTNL/Abilities/TurretUIIcon</iconPath>
+	<castTime>120</castTime>
+	<durationTime>12500</durationTime>
+	<targetMode>Pawn</targetMode>
+	<chance>0</chance>
+	<radius>32.9</radius>
+	<range>30.9</range>
+	<needsTicking>true</needsTicking>
+	<goodwillImpact>0</goodwillImpact>
+	<abilityClass>VEF.Abilities.Ability_SpawnBuilding</abilityClass>
+	<castSound>Psycast_Skip_Exit</castSound>
+	<targetingParameters>
+		<canTargetLocations>True</canTargetLocations>
+		<canTargetSelf>True</canTargetSelf>
+		<canTargetAnimals>True</canTargetAnimals>
+		<canTargetPawns>True</canTargetPawns>
+		<canTargetHumans>True</canTargetHumans>
+		<canTargetMechs>True</canTargetMechs>
+	</targetingParameters>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_OriginiumSTNL</path>
+			<level>2</level>
+			<order>2</order>
+			<psyfocusCost>0.40</psyfocusCost>
+			<entropyGain>25</entropyGain>
+			<prerequisites>
+				<li>VPE_ArtsSurgeSTNL</li>
+			</prerequisites>
+		</li>
+		<li Class="VEF.Abilities.AbilityExtension_Building">
+			<building>Turret_OriginiumTurretSTNL</building>
+		</li>
+		<li Class="VEF.Abilities.AbilityExtension_EffecterOnTarget">
+			<effecterDef>VPE_OriginiumConstructSTNL</effecterDef>
+			<maintainForTicks>1</maintainForTicks>
+			<scale>1</scale>
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+  
+  <ThingDef ParentName="BuildingBase" Name="AutocannonTurretOriginiumSTNL" Abstract="True"> 
+    <thingClass>Building_TurretGun</thingClass>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <graphicData>
+      <texPath>UI_OriginiumSTNL/Abilities/TurretBase</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1, 1)</drawSize>
+      <drawOffset>(0,0,0)</drawOffset>
+      <damageData>
+        <rect>(0.2,0.2,0.6,0.6)</rect>
+      </damageData>
+      <shadowData>
+        <volume>(0,0,0)</volume>
+        <offset>(0,0,-0.05)</offset>
+      </shadowData>
+    </graphicData>    
+    <altitudeLayer>Building</altitudeLayer>
+    <stealable>false</stealable>
+    <rotatable>false</rotatable>
+    <size>(1,1)</size>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <WorkToBuild>15000</WorkToBuild>
+      <Mass>100</Mass>
+      <Beauty>-20</Beauty>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.5</fillPercent>
+    <hasTooltip>true</hasTooltip>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+    <building>
+      <ai_combatDangerous>true</ai_combatDangerous>
+      <turretTopDrawSize>1.25</turretTopDrawSize>
+      <turretTopOffset>(0, 0)</turretTopOffset>
+    </building>
+    <placeWorkers>
+      <li>PlaceWorker_ShowTurretRadius</li>
+    </placeWorkers>
+<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+    <uiIconScale>0.95</uiIconScale>
+  </ThingDef>
+
+  <ThingDef ParentName="AutocannonTurretOriginiumSTNL">
+    <defName>Turret_OriginiumTurretSTNL</defName>
+    <label>Originium Turret</label>
+    <description>A construct made out of Originium, it will attack nearby enemies by shooting them with Originium shards.</description>
+    <uiIconPath>UI_OriginiumSTNL/Abilities/TurretUIIcon</uiIconPath>
+    <statBases>
+      <ShootingAccuracyTurret>9999</ShootingAccuracyTurret> <!-- Near No Miss -->
+    </statBases>
+    <costList>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+	  <li Class="CompProperties_DestroyAfterDelay">
+        <delayTicks>12500</delayTicks>
+      </li>
+
+    </comps>
+    <building>
+      <turretGunDef>Gun_OriginiumTurretVPESTNL</turretGunDef>
+      <turretBurstCooldownTime>3</turretBurstCooldownTime>
+    </building>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_Originium_ShardSTNL</defName>
+    <label>Originium Shard</label>
+    <graphicData>
+      <texPath>UI_OriginiumSTNL/Abilities/TurretBullet</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>15</damageAmountBase>
+      <speed>88</speed>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseWeaponTurret">
+    <defName>Gun_OriginiumTurretVPESTNL</defName>
+    <label>Originium Cannon</label>
+    <description>A self-loading large-bore cannon designed to attach to a turret.</description>
+    <graphicData>
+      <texPath>UI_OriginiumSTNL/Abilities/OriginiumTurret</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <AccuracyTouch>0.28</AccuracyTouch>
+      <AccuracyShort>0.72</AccuracyShort>
+      <AccuracyMedium>0.66</AccuracyMedium>
+      <AccuracyLong>0.5</AccuracyLong>
+      <RangedWeapon_Cooldown>3</RangedWeapon_Cooldown>
+      <DeteriorationRate>0</DeteriorationRate>
+      <Mass>40</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <defaultProjectile>Bullet_Originium_ShardSTNL</defaultProjectile>
+        <warmupTime>0</warmupTime>
+        <minRange>0</minRange>
+        <range>32.9</range>
+        <ticksBetweenBurstShots>17</ticksBetweenBurstShots>
+        <burstShotCount>5</burstShotCount>
+        <soundCast>Shot_TurretSniper</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>12</muzzleFlashScale>
+      </li>
+    </verbs>
+  </ThingDef> 
+  
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_OriginiumCataclysmSTNL</defName>
+	<label>Cataclysm</label>
+	<description>Create an overwhelming amount of originium spikes upon targets in the area.</description>
+	<iconPath>UI_OriginiumSTNL/Abilities/Originium/Cataclysm</iconPath>
+	<castTime>180</castTime>
+	<targetMode>Pawn</targetMode>
+	<chance>1</chance>
+	<radius>10.9</radius>
+	<range>30.9</range>
+	<needsTicking>true</needsTicking>
+	<goodwillImpact>0</goodwillImpact>
+	<abilityClass>VPE_Originium.Ability_OriginiumCataclysm</abilityClass>
+	<castSound>VPE_AggressiveHeatDump_Cast</castSound>
+	<!-- <fleckOnTarget>PsycastAreaEffect</fleckOnTarget> -->
+	<targetingParameters>
+		<canTargetLocations>True</canTargetLocations>
+		<canTargetSelf>True</canTargetSelf>
+		<canTargetAnimals>True</canTargetAnimals>
+		<canTargetPawns>True</canTargetPawns>
+		<canTargetHumans>True</canTargetHumans>
+		<canTargetMechs>True</canTargetMechs>
+	</targetingParameters>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_OriginiumSTNL</path>
+			<level>4</level>
+			<order>1</order>
+			<psyfocusCost>0.30</psyfocusCost>
+			<entropyGain>40</entropyGain>
+			<prerequisites>
+				<li>VPE_ArtsSurgeSTNL</li>
+			</prerequisites>
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_OriginiumPollutionSTNL</defName>
+	<label>Originium Pollution</label>
+	<description>Unleash a massive cloud of originium pollution that rapidly corrodes organic matter, creatures without toxic environment resistance will quickly die from the pollution.</description>
+	<iconPath>UI_OriginiumSTNL/Abilities/Originium/OriginiumPollution</iconPath>
+	<castTime>1200</castTime>
+	<durationTime>60000</durationTime>
+	<targetMode>Self</targetMode>
+	<chance>0</chance>
+	<range>-1</range>
+	<needsTicking>true</needsTicking>
+	<goodwillImpact>0</goodwillImpact>
+	<abilityClass>VEF.Abilities.Ability_Blank</abilityClass>
+	<castSound>Psycast_Neuroquake_CastStart</castSound>
+	<fleckOnTarget>VPE_BurstOriginiumPollutionSTNL</fleckOnTarget>
+	<targetingParameters>
+		<canTargetLocations>True</canTargetLocations>
+		<canTargetSelf>True</canTargetSelf>
+		<canTargetAnimals>True</canTargetAnimals>
+		<canTargetPawns>True</canTargetPawns>
+		<canTargetHumans>True</canTargetHumans>
+		<canTargetMechs>True</canTargetMechs>
+	</targetingParameters>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_OriginiumSTNL</path>
+			<level>4</level>
+			<order>3</order>
+			<psyfocusCost>0.80</psyfocusCost>
+			<entropyGain>80</entropyGain>
+<prerequisites>
+	<li>VPE_ArtsSurgeSTNL</li>
+</prerequisites>
+		</li>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_GameCondition">
+			<gameCondition>OriginiumPollutionSTNL</gameCondition>
+			<durationDays>1</durationDays>
+			<sendLetter>False</sendLetter>
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+  
+  <!-- Level 5 -->
+ 
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_OriginiumOverloadSTNL</defName>
+	<label>Arts: Overload</label>
+	<description>Temporarily convert the psylink into an Arts Unit. While active, all psycasts cost no psyfocus.\nYour psychic sensitivity will drop to 0 for a day as your psylink stabilizes itself.</description>
+	<iconPath>UI_OriginiumSTNL/Abilities/Originium/Overload</iconPath>
+	<castTime>120</castTime>
+	<durationTime>5000</durationTime>
+	<targetMode>Self</targetMode>
+	<radius>-1</radius>
+	<range>30.9</range>
+	<chance>0</chance>
+	<needsTicking>true</needsTicking>
+	<goodwillImpact>0</goodwillImpact>
+	<abilityClass>VEF.Abilities.Ability_Blank</abilityClass>
+	<castSound>Psycast_Neuroquake_Effect</castSound>
+	<fleckOnTarget>PsycastAreaEffect</fleckOnTarget>
+	<targetingParameters>
+		<canTargetLocations>True</canTargetLocations>
+		<canTargetSelf>True</canTargetSelf>
+		<canTargetAnimals>True</canTargetAnimals>
+		<canTargetPawns>True</canTargetPawns>
+		<canTargetHumans>True</canTargetHumans>
+		<canTargetMechs>True</canTargetMechs>
+	</targetingParameters>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_OriginiumSTNL</path>
+			<level>5</level>
+			<order>3</order>
+			<psyfocusCost>0.70</psyfocusCost>
+			<entropyGain>0</entropyGain>
+			<prerequisites>
+				<li>VPE_OriginiumPollutionSTNL</li>
+				<li>VPE_OriginiumCataclysmSTNL</li>
+			</prerequisites>
+		</li>
+		<li Class="VEF.Abilities.AbilityExtension_Hediff">
+			<hediff>VPE_OriginiumArtsUnitSNTL</hediff>
+			<bodyPartToApply>Brain</bodyPartToApply>
+		</li>
+<li Class="VEF.Abilities.AbilityExtension_EffecterOnTarget">
+	<effecterDef>VPE_OriginiumConstructSTNL</effecterDef>
+	<maintainForTicks>1</maintainForTicks>
+	<scale>1</scale>
+</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+
+<!-- level 6 -->
+
+    <VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_OriginiumAssimilationSTNL</defName>
+	<label>Assimilation</label>
+	<description>Assimilate the target's psychic sensitivity, allowing you to use it for yourself. \nThe stronger psychic sensitivity bonus will override the weaker one.\n This ability will kill the target.</description>
+	<iconPath>UI_OriginiumSTNL/Abilities/Originium/Assimilation</iconPath>
+	<castTime>1200</castTime>
+	<targetMode>Pawn</targetMode>
+	<chance>0</chance>
+	<range>30.9</range>
+	<needsTicking>true</needsTicking>
+	<goodwillImpact>0</goodwillImpact>
+	<abilityClass>VPE_Originium.Ability_OriginiumAssimilation</abilityClass>
+	<castSound>VPE_ControlledFrenzy_Cast</castSound>
+	<targetingParameters>
+		<canTargetLocations>False</canTargetLocations>
+		<canTargetSelf>True</canTargetSelf>
+		<canTargetAnimals>True</canTargetAnimals>
+		<canTargetPawns>True</canTargetPawns>
+		<canTargetHumans>True</canTargetHumans>
+		<canTargetMechs>True</canTargetMechs>
+	</targetingParameters>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_OriginiumSTNL</path>
+			<level>4</level>
+			<order>2</order>
+			<psyfocusCost>0.80</psyfocusCost>
+			<entropyGain>100</entropyGain>
+			<prerequisites>
+	<li>VPE_OriginiumOverloadSTNL</li>
+</prerequisites>
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+
+  
+</Defs>
