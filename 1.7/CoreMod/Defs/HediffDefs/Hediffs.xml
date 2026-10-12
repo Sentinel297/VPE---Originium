@@ -1,0 +1,309 @@
+<Defs>
+<!-- Hediff for assimilation -->
+
+<HediffDef>
+<defName>VPE_OriginiumAssimilationSNTL</defName>
+<label>Originium Assimilation</label>
+<description>The absorbed power of a life form. Stronger power will override the weaker one upon assimilation.</description>
+<hediffClass>HediffWithComps</hediffClass>
+<initialSeverity>0</initialSeverity> 
+      <minSeverity>0</minSeverity>
+      <maxSeverity>9999999999999999</maxSeverity>
+<defaultLabelColor>(1.0, 0.5, 0.0)</defaultLabelColor>
+<makesSickThought>False</makesSickThought>
+<scenarioCanAdd>false</scenarioCanAdd>
+<isBad>false</isBad>
+<everCurableByItem>false</everCurableByItem>
+<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+<comps>
+<li Class="VPE_Originium.HediffCompProperties_OriginiumAbsorbedTarget">
+</li>
+</comps>
+<stages>
+<li>
+</li>
+</stages>
+</HediffDef>
+
+<!-- Hediff for restoration -->
+
+<HediffDef>
+	<defName>VPE_ArtsRestorationSTNL</defName>
+	<label>Arts: Restoration</label>
+	<description>This creature is receiving first aid healing Arts, simple scratch and bruises will heal faster. Tending is still required to avoid infections.</description>
+	<hediffClass>HediffWithComps</hediffClass>
+	<initialSeverity>0</initialSeverity>
+	<minSeverity>0</minSeverity>
+	<maxSeverity>9999999999999999</maxSeverity>
+	<defaultLabelColor>(0.7, 0.7, 1)</defaultLabelColor>
+	<makesSickThought>False</makesSickThought>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<isBad>false</isBad>
+	<everCurableByItem>false</everCurableByItem>
+	<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+	<comps>
+		<li Class="VPE_Originium.HediffCompProperties_ArtsRegen"/>
+		<li Class="HediffCompProperties_Disappears">
+			<disappearsAfterTicks>30000</disappearsAfterTicks>
+			<showRemainingTime>True</showRemainingTime>
+		</li>
+		<li Class="HediffCompProperties_DisappearsOnDeath"/>
+	</comps>
+	<stages>
+		<li>
+</li>
+	</stages>
+</HediffDef>
+
+<!-- Hediff for ward -->
+
+<HediffDef>
+	<defName>VPE_ArtsWardSTNL</defName>
+	<label>Arts: Ward</label>
+	<description>This creature is being protected by a ward, projectiles will reflect back to the attacker.</description>
+	<hediffClass>HediffWithComps</hediffClass>
+	<initialSeverity>1</initialSeverity>
+	<minSeverity>0</minSeverity>
+	<maxSeverity>9999999999999999</maxSeverity>
+	<defaultLabelColor>(1, 1, 0)</defaultLabelColor>
+	<makesSickThought>False</makesSickThought>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<isBad>false</isBad>
+	<everCurableByItem>false</everCurableByItem>
+	<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+	<comps>
+		<li Class="VPE_Originium.HediffCompProperties_WardHeddif"/>
+		<li Class="HediffCompProperties_Disappears">
+			<disappearsAfterTicks>30000</disappearsAfterTicks>
+			<showRemainingTime>True</showRemainingTime>
+		</li>
+		<li Class="HediffCompProperties_DisappearsOnDeath"/>
+	</comps>
+	<stages>
+		<li>
+</li>
+	</stages>
+</HediffDef>
+
+<!-- Hediffs for surge -->
+
+<HediffDef>
+	<defName>VPE_ArtsSurgeSTNL</defName>
+	<label>Arts: Surge</label>
+	<description>This creature's attack speed is being enhanced, their attacks will inflict the target with Originium buildup that will turn into an Originium spike once it reaches 100%.</description>
+	<hediffClass>HediffWithComps</hediffClass>
+	<initialSeverity>1</initialSeverity>
+	<minSeverity>0</minSeverity>
+	<maxSeverity>9999999999999999</maxSeverity>
+	<defaultLabelColor>(0.7, 0, 0)</defaultLabelColor>
+	<makesSickThought>False</makesSickThought>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<isBad>false</isBad>
+	<everCurableByItem>false</everCurableByItem>
+	<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+<comps>
+	<li Class="VPE_Originium.HediffCompProperties_SurgeHeddif"/>
+	<li Class="HediffCompProperties_Disappears">
+		<disappearsAfterTicks>12500</disappearsAfterTicks>
+		<showRemainingTime>True</showRemainingTime>
+	</li>
+	<li Class="HediffCompProperties_DisappearsOnDeath"/>
+</comps>
+<stages>
+	<li>
+
+	</li>
+</stages>
+</HediffDef>
+
+<HediffDef>
+	<defName>VPE_OriginiumBuildUpSTNL</defName>
+	<label>Originium buildup</label>
+	<description>This creature is showing signs of Originium buildup. A sharp growth of Originium will burst out from this person shall this condition reach 100%.</description>
+	<hediffClass>HediffWithComps</hediffClass>
+	<initialSeverity>0.01</initialSeverity>
+	<minSeverity>0</minSeverity>
+	<maxSeverity>1</maxSeverity>
+	<defaultLabelColor>(0.7, 0, 0)</defaultLabelColor>
+	<makesSickThought>True</makesSickThought>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<isBad>false</isBad>
+	<everCurableByItem>false</everCurableByItem>
+	<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+<comps>
+	<li Class="HediffCompProperties_Immunizable">
+		<compClass>HediffComp_ImmunizableToxic</compClass>
+		<severityPerDayNotImmune>-0.5</severityPerDayNotImmune>
+	</li>
+	<li Class="VPE_Originium.HediffCompProperties_OriginiumBuildup"/>
+	<li Class="HediffCompProperties_DisappearsOnDeath"/>
+</comps>
+<stages>
+</stages>
+</HediffDef>
+
+<!-- Hediffs for Overload -->
+
+<HediffDef>
+	<defName>VPE_OriginiumArtsUnitSNTL</defName>
+	<label>Arts Unit</label>
+	<description>A modified psylink used as a medium for Originium Arts, this unit is flawed and will eventually become a regular psylink once again.\nThis Arts Unit allows the user to access Originium Arts virtually identical to their psycasts, negating the need for psyfocus.</description>
+	<hediffClass>HediffWithComps</hediffClass>
+	<initialSeverity>1</initialSeverity>
+	<minSeverity>0</minSeverity>
+	<maxSeverity>1</maxSeverity>
+	<defaultLabelColor>(1, 0.5, 0.0)</defaultLabelColor>
+	<makesSickThought>False</makesSickThought>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<isBad>false</isBad>
+	<everCurableByItem>false</everCurableByItem>
+	<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+	<comps>
+		<li Class="VPE_Originium.HediffCompProperties_DisappearsAndGivesHediff">
+			<hediffToAddOnDisappear>VPE_PsychicBlackoutSNTL</hediffToAddOnDisappear>
+			<disappearsAfterTicks>5000</disappearsAfterTicks>
+			<showRemainingTime>True</showRemainingTime>
+		</li>
+		<li Class="HediffCompProperties_DisappearsOnDeath"/>
+	</comps>
+	<stages>
+		<li>
+			<statFactors>
+				<VPE_PsyfocusCostFactor>0</VPE_PsyfocusCostFactor>
+			</statFactors>
+		</li>
+	</stages>
+	<renderNodeProperties>
+		<li>
+			<workerClass>PawnRenderNodeWorker_AttachmentBody</workerClass>
+			<texPaths>
+				<li>Pawn/OriginiumOverloadSTNL/Enhancement</li>
+			</texPaths>
+			<overrideMeshSize>(2, 2)</overrideMeshSize>
+			<parentTagDef>Body</parentTagDef>
+			<rotDrawMode>Fresh, Rotting</rotDrawMode>
+			<drawData>
+				<scaleOffsetByBodySize>true</scaleOffsetByBodySize>
+				<defaultData>
+					<layer>0</layer>
+				</defaultData>
+				<dataNorth>
+					<offset>(0, 0, 0)</offset>
+					<layer>1000</layer>
+				</dataNorth>
+				<dataSouth>
+					<offset>(0, 0, 0)</offset>
+					<layer>-100</layer>
+				</dataSouth>
+				<dataEast>
+					<offset>(0, 0,0.05)</offset>
+					<layer>998</layer>
+				</dataEast>
+				<dataWest>
+					<offset>(0, 0,0.05)</offset>
+					<layer>998</layer>
+				</dataWest>
+			</drawData>
+		</li>
+	</renderNodeProperties>
+</HediffDef>
+
+<HediffDef>
+	<defName>VPE_PsychicBlackoutSNTL</defName>
+	<label>Psychic Blackout</label>
+	<description>A state in which the psylink is attempting to reconnect to the archotech network, this process kills any psychic sensitivity the victim possesses.</description>
+	<hediffClass>HediffWithComps</hediffClass>
+	<initialSeverity>1</initialSeverity>
+	<minSeverity>0</minSeverity>
+	<maxSeverity>1</maxSeverity>
+	<defaultLabelColor>(0.7, 0.7, 0.7)</defaultLabelColor>
+	<makesSickThought>False</makesSickThought>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<isBad>true</isBad>
+	<everCurableByItem>false</everCurableByItem>
+	<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+	<stages>
+		<li>
+			<statFactors>
+				<PsychicSensitivity>0</PsychicSensitivity>
+			</statFactors>
+		</li>
+	</stages>
+	<comps>
+		<li Class="HediffCompProperties_Disappears">
+			<disappearsAfterTicks>60000</disappearsAfterTicks>
+			<showRemainingTime>True</showRemainingTime>
+		</li>
+		<li Class="HediffCompProperties_DisappearsOnDeath"/>
+	</comps>
+	<renderNodeProperties>
+		<li>
+			<workerClass>PawnRenderNodeWorker_AttachmentBody</workerClass>
+			<texPaths>
+				<li>Pawn/OriginiumFailingSTNL/Enhancement</li>
+			</texPaths>
+			<overrideMeshSize>(2, 2)</overrideMeshSize>
+			<parentTagDef>Body</parentTagDef>
+			<rotDrawMode>Fresh, Rotting</rotDrawMode>
+			<drawData>
+				<scaleOffsetByBodySize>true</scaleOffsetByBodySize>
+				<defaultData>
+					<layer>0</layer>
+				</defaultData>
+				<dataNorth>
+					<offset>(0, 0, 0)</offset>
+					<layer>1000</layer>
+				</dataNorth>
+				<dataSouth>
+					<offset>(0, 0, 0)</offset>
+					<layer>-100</layer>
+				</dataSouth>
+				<dataEast>
+					<offset>(0, 0,0.05)</offset>
+					<layer>1</layer>
+				</dataEast>
+				<dataWest>
+					<offset>(0, 0,0.05)</offset>
+					<layer>1</layer>
+				</dataWest>
+			</drawData>
+		</li>
+	</renderNodeProperties>
+</HediffDef>
+
+<!-- No stun hediff -->
+
+<HediffDef>
+	<defName>VPE_NoStunHediffSTNL</defName>
+	<label>Arts Ward: Active Response (Hidden)</label>
+	<description>This creature can't be stunned or take damage</description>
+	<hediffClass>HediffWithComps</hediffClass>
+	<initialSeverity>0</initialSeverity>
+	<minSeverity>0</minSeverity>
+	<maxSeverity>9999999999999999</maxSeverity>
+	<defaultLabelColor>(0.7, 0.7, 1)</defaultLabelColor>
+	<makesSickThought>False</makesSickThought>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<isBad>false</isBad>
+	<everCurableByItem>false</everCurableByItem>
+	<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+	<comps>
+		<li Class="HediffCompProperties_Disappears">
+			<disappearsAfterTicks>5</disappearsAfterTicks>
+			<showRemainingTime>True</showRemainingTime>
+		</li>
+		<li Class="HediffCompProperties_DisappearsOnDeath"/>
+	</comps>
+<stages>
+<li>
+	<becomeVisible>false</becomeVisible>
+	<statFactors>
+		<IncomingDamageFactor>0</IncomingDamageFactor>
+		<StaggerDurationFactor>0</StaggerDurationFactor>
+		<Flammability>0</Flammability>
+	</statFactors>
+</li>
+</stages>
+</HediffDef>
+
+</Defs>

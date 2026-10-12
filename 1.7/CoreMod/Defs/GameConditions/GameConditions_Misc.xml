@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<GameConditionDef>
+    <defName>OriginiumPollutionSTNL</defName>
+    <conditionClass>VPE_Originium.OriginiumPollution</conditionClass>
+    <label>Originium Pollution</label>
+    <description>A thick mist of active originium is contaminating the area, anyone outside without sufficient protective gear will suffer burns.</description>
+    <weatherDef>OriginiumPollutionSTNL</weatherDef>
+    <canBePermanent>true</canBePermanent>
+    <natural>false</natural>
+    <allowUnderground>false</allowUnderground>
+  </GameConditionDef>
+  
+  <WeatherDef>
+    <defName>OriginiumPollutionSTNL</defName>
+    <label>Originium Pollution</label>
+    <isBad>false</isBad>
+    <canOccurAsRandomForcedEvent>false</canOccurAsRandomForcedEvent>
+    <description>A cloud of originium pollution is passing in the area, causing burns to everyone without anti toxin gear.</description>
+    <favorability>VeryBad</favorability>
+    <perceivePriority>3</perceivePriority>
+    <windSpeedFactor>1</windSpeedFactor>
+    <accuracyMultiplier>1</accuracyMultiplier>
+    <transitionTicksOverride>30</transitionTicksOverride>
+    <ambientSounds>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Ambient_DeathPall</li>
+    </ambientSounds>
+    <overlayClasses>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">WeatherOverlay_DeathPallFog</li>
+    </overlayClasses>
+    <commonalityRainfallFactor>
+      <points>
+        <li>(0, 0)</li>
+        <li>(1300, 1)</li>
+      </points>
+    </commonalityRainfallFactor>
+    <!-- Colors are Overcast -->
+    <skyColorsDay>
+      <sky>(1,0.3,0.3)</sky>
+      <shadow>(0.92,0.92,0.92)</shadow>
+      <overlay>(1,1,1)</overlay>
+      <saturation>0.8</saturation>
+    </skyColorsDay>
+    <skyColorsDusk>
+      <sky>(0.7,0.3,0.3)</sky>
+      <shadow>(0.92,0.92,0.92)</shadow>
+      <overlay>(1,1,1)</overlay>
+      <saturation>0.8</saturation>
+    </skyColorsDusk>
+    <skyColorsNightEdge>
+      <sky>(0.6,0.20,0.25)</sky>
+      <shadow>(0.92,0.92,0.92)</shadow>
+      <overlay>(1,1,1)</overlay>
+      <saturation>0.8</saturation>
+    </skyColorsNightEdge>
+    <skyColorsNightMid>
+      <sky>(0.5,0.20,0.25)</sky>
+      <shadow>(0.92,0.92,0.92)</shadow>
+      <overlay>(1,1,1)</overlay>
+      <saturation>0.8</saturation>
+    </skyColorsNightMid>
+  </WeatherDef>
+
+</Defs>

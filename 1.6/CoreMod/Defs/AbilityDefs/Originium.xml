@@ -84,6 +84,8 @@
 	</modExtensions>
 </VEF.Abilities.AbilityDef>
   
+
+  
 <VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
 	<defName>VPE_ArtsRestorationSTNL</defName>
 	<label>Arts: Restoration</label>
@@ -122,6 +124,8 @@
 </VEF.Abilities.AbilityDef>
   
   <!-- Level 3 -->
+  
+  
   
   <VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
 	<defName>VPE_ArtsSurgeSTNL</defName>
@@ -368,18 +372,16 @@
 	<label>Originium Pollution</label>
 	<description>Unleash a massive cloud of originium pollution that rapidly corrodes organic matter, creatures without toxic environment resistance will quickly die from the pollution.</description>
 	<iconPath>UI_OriginiumSTNL/Abilities/Originium/OriginiumPollution</iconPath>
-	<castTime>180</castTime>
+	<castTime>1200</castTime>
 	<durationTime>60000</durationTime>
-	<durationTimeStatFactors>
-		<PsychicSensitivity>1</PsychicSensitivity>
-	</durationTimeStatFactors>
 	<targetMode>Self</targetMode>
-	<!-- <chance>0</chance> -->
+	<chance>0</chance>
 	<range>-1</range>
 	<needsTicking>true</needsTicking>
 	<goodwillImpact>0</goodwillImpact>
-	<abilityClass>SentinelFramework_STNL.Ability_ForceCondition</abilityClass>
+	<abilityClass>VEF.Abilities.Ability_Blank</abilityClass>
 	<castSound>Psycast_Neuroquake_CastStart</castSound>
+	<fleckOnTarget>VPE_BurstOriginiumPollutionSTNL</fleckOnTarget>
 	<targetingParameters>
 		<canTargetLocations>True</canTargetLocations>
 		<canTargetSelf>True</canTargetSelf>
@@ -393,18 +395,16 @@
 			<path>VPE_OriginiumSTNL</path>
 			<level>4</level>
 			<order>3</order>
-			<psyfocusCost>0.50</psyfocusCost>
+			<psyfocusCost>0.80</psyfocusCost>
 			<entropyGain>80</entropyGain>
-			<prerequisites>
-				<li>VPE_ArtsSurgeSTNL</li>
-			</prerequisites>
+<prerequisites>
+	<li>VPE_ArtsSurgeSTNL</li>
+</prerequisites>
 		</li>
-		<li Class="SentinelFramework_STNL.AbilityForceCondiExt">
-			<conditionDef>OriginiumPollutionSTNL</conditionDef>
-			<global>false</global>
-			<scaleDuraWithSensi>True</scaleDuraWithSensi>
-			<aiCanUse>true</aiCanUse>
-			<fleckDef>VPE_BurstOriginiumPollutionSTNL</fleckDef>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_GameCondition">
+			<gameCondition>OriginiumPollutionSTNL</gameCondition>
+			<durationDays>1</durationDays>
+			<sendLetter>False</sendLetter>
 		</li>
 	</modExtensions>
 </VEF.Abilities.AbilityDef>

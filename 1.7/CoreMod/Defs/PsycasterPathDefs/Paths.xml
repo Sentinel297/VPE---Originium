@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+	<VanillaPsycastsExpanded.PsycasterPathDef>
+		<defName>VPE_OriginiumSTNL</defName>
+		<label>Originium</label>
+		<description>Embrace the power of the Originium to wield it in different powerful ways.</description>
+		<background>UI_OriginiumSTNL/Tree/OriginiumTreeBase</background>
+		<altBackground>UI_OriginiumSTNL/Tree/OriginiumTreeBase</altBackground>
+		<tab>Misc</tab>
+		<tooltip>Embrace the power of the Originium to wield it in different powerful ways.</tooltip>
+	</VanillaPsycastsExpanded.PsycasterPathDef>
+</Defs>
